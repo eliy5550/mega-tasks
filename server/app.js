@@ -3,24 +3,23 @@ const tasksRouter = require('./routes/tasksRouter')
 const bp = require('body-parser')
 const usersRoutes = require('./routes/usersRouter')
 const cors = require('cors')
-//const session = require('express-session')
+const app = express()
+
 const dotenv = require('dotenv');
 
 dotenv.config();
-const app = express()
 
-//all request will be in json so parse json..
-app.use(bp.json())
-
-app.use(express.static('./client'))
 
 //any app can access this server
 app.use(cors({
     origin: '*'
 }));
 
-//serve client
-app.get('/' , (req , res)=>{ res.send('server send - Hello!')})
+//all request will be in json so parse json..
+app.use(bp.json())
+
+//serve react client
+app.use(express.static('./client'))
 
 //tasks routes
 app.use('/tasks' , tasksRouter)
@@ -30,6 +29,6 @@ app.use('/users' , usersRoutes)
 
 
 //listen for requests
-app.listen(process.env.PORT , ()=>{
-    console.log('running server on \nhttp://127.0.0.1:5000/')
+app.listen(5001 , ()=>{
+    console.log('running server on \nhttp://127.0.0.1:5001/')
 })
