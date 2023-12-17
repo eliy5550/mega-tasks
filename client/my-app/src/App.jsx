@@ -17,15 +17,16 @@ export const UserContext = createContext()
 
 function App() {
 
+  //guest user for a first time user
   const [jwt, setJwt] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVpZCI6MTMsInRpbWVfb2Zfam9pbmluZyI6IjIwMjMtMDgtMTYiLCJlbWFpbCI6ImVsaXk1NTUwQGdtYWlsLmNvTSIsInVfcGFzc3dvcmQiOiIxMjM0NTYiLCJmaXJzdG5hbWUiOiJFbGllbCIsImxhc3RuYW1lIjoiWWVzaGF5YWh1dSIsInVfcm9sZSI6InVzZXIifSwiaWF0IjoxNjkyODkzMzAxfQ.Kpb8nxdedQ3j9nk1yLcHds8gNN6LMRyZ9Isvo79WeJA")
-  const [user, setUser] = useState({"uid":13,"time_of_joining":"2023-08-16","email":"eliy5550@gmail.coM","u_password":"123456","firstname":"Eliel","lastname":"Yeshayahuu","u_role":"user"})
+  const [user, setUser] = useState({"uid":13,"time_of_joining":"2023-08-16","email":"eliy5550@gmail.com","u_password":"123456","firstname":"USER","lastname":"1","u_role":"user"})
 
 
   return (
     <div className='container'>
 
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
 
       

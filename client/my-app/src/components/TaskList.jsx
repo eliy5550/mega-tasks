@@ -25,23 +25,26 @@ const TaskList = (props) => {
             }
         }))
 
-        const result = await fetch(appConf.BASE_URL + '/tasks/done', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + jwt
-            },
-            body: JSON.stringify(
-                {
-                    'tid': tid
-                }
+        try {
+            const result = await fetch(appConf.BASE_URL + '/tasks/done', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + jwt
+                },
+                body: JSON.stringify(
+                    {
+                        'tid': tid
+                    }
+                )
+            }
             )
-        }
-        )
-
-        const data = await result.json()
-        alert(JSON.stringify(data))
-
+    
+            const data = await result.json()
+            console.log(JSON.stringify(data))
+        } catch (error) {
+            alert("did not update server ! : "+JSON.stringify(error))
+        }    
 
     }
 
@@ -56,44 +59,55 @@ const TaskList = (props) => {
             } else return t;
         }))
 
-        const result = await fetch(appConf.BASE_URL + '/tasks/undone', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + jwt
-            },
-            body: JSON.stringify(
-                {
-                    'tid': tid
-                }
-            )
-        }
-        )
 
-        const data = await result.json()
-        alert(JSON.stringify(data))
+        try {
+            const result = await fetch(appConf.BASE_URL + '/tasks/undone', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + jwt
+                },
+                body: JSON.stringify(
+                    {
+                        'tid': tid
+                    }
+                )
+            }
+            )
+    
+            const data = await result.json()
+            console.log(JSON.stringify(data))
+        } catch (error) {
+            alert("did not update server ! : "+JSON.stringify(error))
+        }
     }
 
     const deleteTask = async (e, tid) => {
         e.stopPropagation();
         props.setTasks(props.tasks.filter(t => t.tid != tid))
 
-        const result = await fetch(appConf.BASE_URL + '/tasks/removebyid', {
-            method: 'delete',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + jwt
-            },
-            body: JSON.stringify(
-                {
-                    'tid': tid
-                }
-            )
-        }
-        )
 
-        const data = await result.json()
-        alert(JSON.stringify(data))
+        try {
+            
+            const result = await fetch(appConf.BASE_URL + '/tasks/removebyid', {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + jwt
+                },
+                body: JSON.stringify(
+                    {
+                        'tid': tid
+                    }
+                )
+            }
+            )
+    
+            const data = await result.json()
+            console.log(JSON.stringify(data))
+        } catch (error) {
+            alert("did not update server ! : "+JSON.stringify(error))
+        }
     }
 
 
@@ -135,18 +149,18 @@ const TaskList = (props) => {
 
                     <hr />
                     {(t.isDone === 1) ? (
-                        <motion.button whileHover={{scale:1.1}}  className="undone_btn" onClick={(e) => { undone(e, t.tid) }}>Undone</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} className="undone_btn" onClick={(e) => { undone(e, t.tid) }}>Undone</motion.button>
                     ) : (
-                        <motion.button whileHover={{scale:1.1}} className="done_btn" onClick={(e) => { done(e, t.tid) }}>Done</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} className="done_btn" onClick={(e) => { done(e, t.tid) }}>Done</motion.button>
                     )}
-                    <motion.button whileHover={{scale:1.1}} onClick={(e) => { deleteTask(e, t.tid) }} className="delete_btn">x</motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} onClick={(e) => { deleteTask(e, t.tid) }} className="delete_btn">x</motion.button>
 
                 </motion.div>
             ))}
 
 
             <Popup on={popped} setPopped={setPopped} >
-                <TaskFull t={trackedTask} setPopped={setPopped} done={done} undone={undone} />
+                <TaskFull t={trackedTask} setPopped={setPopped} done={done} undone={undone} setPoppedAddTask={props.setPoppedAddTask} />
             </Popup>
 
         </div>

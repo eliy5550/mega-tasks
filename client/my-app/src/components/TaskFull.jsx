@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 //display full details of task in popup
 export default (props) => {
-    if (props.t === {}) {
+    if (props.t == {}) {
         return (<></>)
     }
 
@@ -36,7 +36,7 @@ export default (props) => {
             ) : (
                 <motion.button whileHover={{scale:1.1}} className="done_btn" onClick={(e) => { props.done(e, props.t.tid); props.setPopped(false) }}>Done</motion.button>
             )}
-            <motion.button whileHover={{scale:1.1}} className="delete_btn exitButton"  onClick={(e) => { props.deleteTask(e, props.t.tid); props.setPopped(false) }} >x</motion.button>
+            <motion.button whileHover={{scale:1.1}} className="delete_btn exitButton"  onClick={(e) => { props.deleteTask(e, props.t.tid); props.setPopped(false); }} >x</motion.button>
         </motion.div>
     )
 }

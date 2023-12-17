@@ -15,7 +15,7 @@ export default (props) => {
     //adding a task
     const addTask = async (e) => {
         e.preventDefault()
-
+        props.setPoppedAddTask(false)
         //update server
         const r = await fetch(appConf.BASE_URL + '/tasks/add', {
             method: "PUT",
@@ -36,7 +36,7 @@ export default (props) => {
         const data = await r.json()
 
         if(data.tid){
-            alert("success : " + JSON.stringify(data))
+            console.log("success : " + JSON.stringify(data))
             //update client
             props.setTasks([...props.tasks , data])
         }else{

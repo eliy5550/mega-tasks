@@ -33,10 +33,7 @@ export default (props) => {
                 Authorization: "Bearer " + jwt
             }
         })
-
         const data = await r.json()
-
-
         if (Array.isArray(data)) {
             //populate tasks in client
             setTasks(data)
@@ -57,16 +54,16 @@ export default (props) => {
         <>
             <Title title='Dashboard' />
 
-            <motion.button whileHover={{scale:1.1}} className="done_btn" onClick={() => { setPoppedAddTask(true) }}>Add Task</motion.button> <t></t>
+            <motion.button whileHover={{scale:1.1}} className="done_btn" onClick={() => { setPoppedAddTask(true) }}>Add Task</motion.button>
             <motion.button whileHover={{scale:1.1}} className="edit_profile_btn" onClick={() => { setPoppedEditProfile(true) }}>Edit Profile</motion.button> 
 
             <br /> <br />
 
             <p>Click a card for more information about the task.</p>
-            <TaskList tasks={tasks} setTasks={setTasks} />
+            <TaskList tasks={tasks} setTasks={setTasks}  />
 
             <Popup on={poppedAddTask} setPopped={setPoppedAddTask}>
-                <AddTask tasks={tasks} setTasks={setTasks} />
+                <AddTask tasks={tasks} setTasks={setTasks} setPoppedAddTask={setPoppedAddTask} />
             </Popup>
 
             <Popup on={poppedEditProfile} setPopped={setPoppedEditProfile}>
