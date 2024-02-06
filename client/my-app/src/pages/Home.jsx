@@ -9,7 +9,7 @@ export default () => {
             <h1 className="main_title">MEGA TASKS</h1>
             <p className="first_p"> 
                 Welcome to MEGA TASKS, <br />
-                {"Node React Project by Eliel :)"}
+                {"Node React Project :)"}
             </p>
         </motion.div>
         </>

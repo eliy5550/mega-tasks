@@ -27,7 +27,6 @@ export default (props) => {
 
     //get tasks from server
     const getTasks = async () => {
-
         const r = await fetch(appConf.BASE_URL + "/tasks/user_tasks/" + user.uid, {
             headers: {
                 Authorization: "Bearer " + jwt
@@ -47,7 +46,12 @@ export default (props) => {
             navigator('/')
         }
         getTasks()
+
+        setInterval(getTasks , 10000)
+
     }, [])
+
+    
 
     //page itself
     return (

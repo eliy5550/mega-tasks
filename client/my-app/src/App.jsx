@@ -18,7 +18,7 @@ export const UserContext = createContext()
 function App() {
 
   //guest user for a first time user
-  const [jwt, setJwt] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVpZCI6MTMsInRpbWVfb2Zfam9pbmluZyI6IjIwMjMtMDgtMTYiLCJlbWFpbCI6ImVsaXk1NTUwQGdtYWlsLmNvTSIsInVfcGFzc3dvcmQiOiIxMjM0NTYiLCJmaXJzdG5hbWUiOiJFbGllbCIsImxhc3RuYW1lIjoiWWVzaGF5YWh1dSIsInVfcm9sZSI6InVzZXIifSwiaWF0IjoxNjkyODkzMzAxfQ.Kpb8nxdedQ3j9nk1yLcHds8gNN6LMRyZ9Isvo79WeJA")
+  const [jwt, setJwt] = useState("")
   const [user, setUser] = useState({"uid":13,"time_of_joining":"2023-08-16","email":"eliy5550@gmail.com","u_password":"123456","firstname":"USER","lastname":"1","u_role":"user"})
 
 

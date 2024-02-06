@@ -31,13 +31,11 @@ export default () => {
 
         const data = await r.json()
 
-        // alert(JSON.stringify(data))
 
         if (data.token) {
             setJwt(data.token)
             setUser(data.user)
 
-            // alert(JSON.stringify(data.user))
             navigate('/dashboard')
         } else {
             alert('wrong credentials')
@@ -53,6 +51,9 @@ export default () => {
                 <input onChange={(e) => setLoginEmail(e.target.value)} className="textInput" type="text" id='email' name="email" placeholder="Email" /> <br />
                 <input onChange={(e) => setLoginPassword(e.target.value)} className="textInput" type="password" itemID="password" name="password" placeholder="Password" /> <br />
                 <input type="submit" value="Login" /> <br />
+                <b>Testing User:</b>
+                <p>eliy5550@gmail.com<br />123456</p>
+                
             </form>
         </div>
 
