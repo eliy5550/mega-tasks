@@ -1,35 +1,35 @@
-body{
+body {
   background-color: #F8F0E5;
   color: rgb(16, 44, 87);
-  font-family:Poppins;
+  font-family: Poppins;
 }
 
-.main_title{
+.main_title {
   width: fit-content;
   margin: 10px auto;
   font-size: 150px;
-  text-shadow: 5px 5px rgba(0, 0, 0, 0.2) ;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.first_p{
+.first_p {
   width: max-content;
   text-align: center;
   margin: 10px auto;
   font-size: 30px;
-  border : 2px solid #DAC0A3;
+  border: 2px solid #DAC0A3;
   padding: 20px;
   border-radius: 50px;
   box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.navbox{
+.navbox {
   width: 600px;
   margin: 10px auto;
   text-align: center;
 
 }
 
-.navbox div{
+.navbox div {
   display: inline-block;
   background-color: rgb(16, 44, 87);
   color: #EADBC8;
@@ -43,24 +43,25 @@ body{
 
 }
 
-.nav_item{
+.nav_item {
   color: #EADBC8;
   text-decoration-line: unset;
 
 }
 
-.form_box{
+.form_box {
   background-color: #DAC0A3;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width : 300px   ;
+  width: 300px;
   margin: auto;
   margin-top: 50px;
-  padding:  50px  ; 
+  padding: 50px;
 
 }
 
-.form_box input , form input{
+.form_box input,
+form input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -70,22 +71,24 @@ body{
   background-color: #F8F0E5;
 }
 
-.edit_profile_form{
+.edit_profile_form {
   max-width: 300px;
   margin: auto;
 }
 
-.form_box input[type="submit"]{
+.form_box input[type="submit"] {
   background-color: #9EB384;
-  color : #F8F0E5;
-  font-weight:bold;
+  color: #F8F0E5;
+  font-weight: bold;
   font-size: larger;
 }
-.cards{
+
+.cards {
   text-align: center;
   margin-bottom: 50px;
 }
-.card{
+
+.card {
   background-color: #EADBC8;
   border-radius: 10px;
   width: 300px;
@@ -97,58 +100,59 @@ body{
   vertical-align: text-top;
 }
 
-.card b{
+.card b {
   font-size: 20px;
 
 }
 
-.left_align{
+.left_align {
   text-align: left;
 }
 
-.done_btn{
+.done_btn {
   padding: 5px;
   border: none;
   border-radius: 5px;
   background-color: #9EB384;
-  color:#F8F0E5;
-  width: fit-content;
-  margin: auto 5px 5px;
-}
-.undone_btn{
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  background-color: #DAC0A3;
-  color:#F8F0E5;
-  
-}
-
-.edit_profile_btn{
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  background-color: #DAC0A3;
-  color:white;
+  color: #F8F0E5;
   width: fit-content;
   margin: auto 5px 5px;
 }
 
-.delete_btn{
+.undone_btn {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #DAC0A3;
+  color: #F8F0E5;
+
+}
+
+.edit_profile_btn {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #DAC0A3;
+  color: white;
+  width: fit-content;
+  margin: auto 5px 5px;
+}
+
+.delete_btn {
   position: absolute;
   right: 0;
-  top:0;
+  top: 0;
   padding: 0;
   margin: 0;
   width: 30px;
-  height : 30px;
+  height: 30px;
   background-color: tomato;
-  color:#F8F0E5;
+  color: #F8F0E5;
   border: none;
   border-radius: 0 10px 0 10px;
 }
 
-.popup{
+.popup {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
@@ -158,21 +162,23 @@ body{
   height: 100%;
 
 }
-.popup_center{
+
+.popup_center {
   background-color: #EADBC8;
-  width: 40%;
+  width: 50%;
   margin: auto;
   position: fixed;
   top: 10%;
-  left: 30%;
+  left: 25%;
 }
-.exitButton{
+
+.exitButton {
   position: absolute;
   top: 0%;
   right: 0;
 }
 
-textarea{
+textarea {
   resize: none;
   border: 1px solid #9EB384;
   padding: 10px;
@@ -180,9 +186,61 @@ textarea{
   width: 100%;
 }
 
-textarea:focus{
+textarea:focus {
   outline: 0;
 }
 
+div{
+  border : 1px solid red;
+}
 
+@media (max-width: 1000px) {
+  .main_title{
+    font-size: 100px;
+  }
 
+  .first_p{
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 770px) {
+  .main_title{
+    font-size: 70px;
+  }
+
+  .nav_item{
+    font-size: 16px;
+  }
+  .navbox{
+    width: fit-content;
+  }
+
+  .navbox div{
+    padding: 6px;
+  }
+
+  .first_p{
+    font-size: 16px;
+  }
+ 
+  .popup_center {
+    width: 90%;
+    margin: auto;
+    position: fixed;
+    left: 5%;
+  }
+}
+
+@media (max-width: 460PX) {
+  .main_title{
+    font-size: 46px;
+  }
+
+  .navbox div{
+    width: 80%;
+  }
+
+ 
+}
