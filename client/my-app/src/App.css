@@ -191,7 +191,6 @@ textarea:focus {
 }
 
 div{
-  border : 1px solid red;
 }
 
 @media (max-width: 1000px) {
@@ -235,7 +234,7 @@ div{
 
 @media (max-width: 460PX) {
   .main_title{
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .navbox div{
